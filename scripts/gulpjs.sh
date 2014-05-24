@@ -18,7 +18,7 @@ default=( gulp gulp-ruby-sass gulp-util gulp-autoprefixer gulp-minify-css gulp-j
 # Merge with parameters
 plugins=("$@" "${default[@]}")
 
-echo npm install "${plugins[@]}" --save-dev --no-bin-links
+npm install "${plugins[@]}" --save-dev --no-bin-links
 
 echo ">>>> Done"
 
