@@ -13,7 +13,7 @@ fi
 
 echo ">>>> Install gulp and plugins"
 
-npm install gulp $@ --save-dev --no-bin-links
+npm install gulp $* --save-dev --no-bin-links
 
 echo ">>>> Done"
 
