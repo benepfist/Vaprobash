@@ -4,6 +4,7 @@ var sass = require('gulp-ruby-sass');
 var autoprefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
 var jsmin = require('gulp-jsmin');
+var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 
@@ -28,7 +29,8 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function() {
-    return gulp.src(jsDir + '/**/*.js')
+    return gulp.src(jsDir + '/bootstrap.js')
+    	.pipe(browserify())
     	.pipe(concat('bootstrap.js'))
        	.pipe(jsmin().on('error', gutil.log))
         .pipe(rename({suffix: '.min'}))
